@@ -100,4 +100,4 @@ Check whether a string is a palindrome by reversing it.
 
 **Data Structure:** 
 
-String
+String  
