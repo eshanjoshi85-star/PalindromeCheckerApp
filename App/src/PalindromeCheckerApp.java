@@ -1,45 +1,58 @@
-//Version 4.0
+//Version 5.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
 //Use Case 2: Hardcoded Palindrome (Optimized Check)
 //Use Case 3: Palindrome Check Using String Reverse
 //Use Case 4: Character Array Based Palindrome Check
-
+//Use Case 5: Stack-Based Palindrome Checker
+import java.util.Stack;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         // UC1: Welcome Message
         System.out.println("Welcome to Palindrome Checker Management System");
-        // UC2: Hardcoded Palindrome (Using Index Comparison)
-        String original = "madam";
-        boolean isPalindrome = true;
-        for (int i = 0; i < original.length() / 2; i++) {
-            if (original.charAt(i) != original.charAt(original.length() - 1 - i)) {
-                isPalindrome = false;
+        System.out.println();
+        //UC2: Hardcoded Palindrome (Using Index Comparison)
+        String originalUC2 = "madam";
+        boolean isPalUC2 = true;
+        for (int i = 0; i < originalUC2.length() / 2; i++) {
+            if (originalUC2.charAt(i) != originalUC2.charAt(originalUC2.length() - 1 - i)) {
+                isPalUC2 = false;
                 break;
             }
         }
-        System.out.println("UC2 Result: The string '" + original + "' is a palindrome? " + isPalindrome);
-        // UC3: Palindrome Check Using String Reverse (Concatenation)
-        String original1 = "radar";
-        String reversed1 = "";
-        for (int i = original1.length() - 1; i >= 0; i--) {
-            reversed1 = reversed1 + original1.charAt(i);
+        System.out.println("UC2 (Optimized): Is '" + originalUC2 + "' a palindrome? " + isPalUC2);
+        //  UC3: Palindrome Check Using String Reverse (Concatenation)
+        String originalUC3 = "radar";
+        String reversedUC3 = "";
+        for (int i = originalUC3.length() - 1; i >= 0; i--) {
+            reversedUC3 = reversedUC3 + originalUC3.charAt(i);
         }
-        System.out.println("UC3 Result: The string '" + original1 + "' is a palindrome? " + original1.equals(reversed1));
+        System.out.println("UC3 (Reverse): Is '" + originalUC3 + "' a palindrome? " + originalUC3.equals(reversedUC3));
         // UC4: Character Array Based Palindrome Check
-        String input = "deified";
-        char[] charArray = input.toCharArray();
+        String inputUC4 = "deified";
+        char[] charArray = inputUC4.toCharArray();
         int left = 0;
         int right = charArray.length - 1;
-        isPalindrome = true;
+        boolean isPalUC4 = true;
         while (left < right) {
             if (charArray[left] != charArray[right]) {
-                isPalindrome = false;
+                isPalUC4 = false;
                 break;
             }
             left++;
             right--;
         }
-        System.out.println("UC4 Result: The string '" + input + "' is a palindrome? " + isPalindrome);
+        System.out.println("UC4 (Char Array): Is '" + inputUC4 + "' a palindrome? " + isPalUC4);
+        // UC5: Stack-Based Palindrome Checker
+        String inputUC5 = "noon";
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < inputUC5.length(); i++) {
+            stack.push(inputUC5.charAt(i));
+        }
+        String reversedUC5 = "";
+        while (!stack.isEmpty()) {
+            reversedUC5 += stack.pop();
+        }
+        System.out.println("UC5 (Stack): Is '" + inputUC5 + "' a palindrome? " + inputUC5.equals(reversedUC5));
     }
 }
