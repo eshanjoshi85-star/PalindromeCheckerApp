@@ -1,10 +1,12 @@
 //Version 1.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
-//Use Case 2:
+//Use Case 2: Harcoded Palindrome
 public class PalindromeCheckerApp{
     public static void main(String[] args){
+        //Use Case 1: Welcome Message
         System.out.println("Welcome to Palindrome Checker Management System");
+        //Use Case 2: Hardcoded Check
         String original = "madam";
         boolean isPalindrome = true;
         for (int i = 0; i < original.length() / 2; i++) {
