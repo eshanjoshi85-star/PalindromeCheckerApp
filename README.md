@@ -72,3 +72,32 @@ String Literal – Text enclosed within double quotes ("madam"), stored in the S
 Conditional Statement (if-else) – Used to evaluate whether the given string satisfies the palindrome condition.
 
 Console Output – System.out.println() is used to display the result on the console.
+
+UC3: Palindrome Check Using String Reverse
+-
+
+**Goal:** 
+
+Check whether a string is a palindrome by reversing it.
+
+**Flow:**
+
+1.Reverse string using loop
+
+2.Compare original and reversed
+
+3.Display result
+
+4.Key Concepts used in UC3:
+
+5.Loop (for loop) – Used to iterate through the characters of the string in reverse order.
+
+6.String Immutability – In Java, String objects are immutable; every modification creates a new String object.
+
+7.String Concatenation (+) – Used to build the reversed string character by character (introduced here to later discuss drawbacks).
+
+8.equals() Method – Used to compare the actual content of two String objects instead of memory references.
+
+**Data Structure:** 
+
+String
