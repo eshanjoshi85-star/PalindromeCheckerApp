@@ -41,6 +41,7 @@ UC2: Print a Hardcoded Palindrome Result
 **Goal:**
 
 Display whether a hardcoded string is a palindrome.
+
 **Actor:**
 
 User
