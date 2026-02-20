@@ -1,4 +1,4 @@
-//Version 1.0
+//Version 2.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
 //Use Case 2: Harcoded Palindrome
