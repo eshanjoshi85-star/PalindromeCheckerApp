@@ -1,4 +1,4 @@
-//Version 9.0
+//Version 10.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
 //Use Case 2: Hardcoded Palindrome (Optimized Check)
@@ -9,6 +9,7 @@
 //Use Case 7: Deque-Based Optimized Palindrome Checker
 //Use Case 8: Linked List Based Palindrome Checker
 //Use Case 9: Recursive Palindrome Checker
+//Use Case 10: Case-Insensitive & Space-Ignored Palindrome
 
 import java.util.Stack;
 import java.util.Queue;
@@ -50,6 +51,21 @@ public class PalindromeCheckerApp {
             return false;
         }
         return isPalindromeRecursive(str, start + 1, end - 1);
+    }
+
+    // Method for UC10: Case-Insensitive & Space-Ignored Palindrome
+    public static boolean isPalindromeIgnoreCaseSpace(String input) {
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        int left = 0;
+        int right = normalized.length() - 1;
+        while (left < right) {
+            if (normalized.charAt(left) != normalized.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -172,5 +188,10 @@ public class PalindromeCheckerApp {
         String inputUC9 = "refer";
         boolean isPalUC9 = isPalindromeRecursive(inputUC9, 0, inputUC9.length() - 1);
         System.out.println("UC9 (Recursive): Is '" + inputUC9 + "' a palindrome? " + isPalUC9);
+
+        // UC10: Case-Insensitive & Space-Ignored Palindrome
+        String inputUC10 = "A man a plan a canal Panama";
+        boolean isPalUC10 = isPalindromeIgnoreCaseSpace(inputUC10);
+        System.out.println("UC10 (Ignore Case & Space): Is '" + inputUC10 + "' a palindrome? " + isPalUC10);
     }
 }
