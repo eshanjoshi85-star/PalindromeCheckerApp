@@ -266,3 +266,26 @@ Call Stack – Memory structure used to manage method calls during recursion.
 
 Call Stack
 
+**UC10: Case-Insensitive & Space-Ignored Palindrome**
+-
+
+**Goal:**
+
+Ignore spaces and case while checking a palindrome.
+
+**Flow:**
+
+1.Normalize string
+
+2.Apply previous logic
+
+**Key Concepts used in UC10:**
+
+String preprocessing
+
+Regular expressions
+
+**Data Structure:**
+
+String / Array
+
