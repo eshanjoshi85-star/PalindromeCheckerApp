@@ -1,4 +1,4 @@
-//Version 8.0
+//Version 9.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
 //Use Case 2: Hardcoded Palindrome (Optimized Check)
@@ -8,11 +8,15 @@
 //Use Case 6: Queue + Stack Based Palindrome Check
 //Use Case 7: Deque-Based Optimized Palindrome Checker
 //Use Case 8: Linked List Based Palindrome Checker
+//Use Case 9: Recursive Palindrome Checker
+
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Deque;
+
 public class PalindromeCheckerApp {
+
     // Node Class for UC8
     static class Node {
         char data;
@@ -22,6 +26,7 @@ public class PalindromeCheckerApp {
             this.next = null;
         }
     }
+
     // Method to reverse linked list (UC8)
     public static Node reverseList(Node head) {
         Node prev = null;
@@ -35,6 +40,18 @@ public class PalindromeCheckerApp {
         }
         return prev;
     }
+
+    // Method for UC9 Recursive Palindrome Check
+    public static boolean isPalindromeRecursive(String str, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+        return isPalindromeRecursive(str, start + 1, end - 1);
+    }
+
     public static void main(String[] args) {
 
         // UC1: Welcome Message
@@ -150,5 +167,10 @@ public class PalindromeCheckerApp {
             tempSecond = tempSecond.next;
         }
         System.out.println("UC8 (Linked List): Is '" + inputUC8 + "' a palindrome? " + isPalUC8);
+
+        // UC9: Recursive Palindrome Checker
+        String inputUC9 = "refer";
+        boolean isPalUC9 = isPalindromeRecursive(inputUC9, 0, inputUC9.length() - 1);
+        System.out.println("UC9 (Recursive): Is '" + inputUC9 + "' a palindrome? " + isPalUC9);
     }
 }
