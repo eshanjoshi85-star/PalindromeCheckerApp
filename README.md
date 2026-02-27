@@ -214,4 +214,32 @@ Optimized Data Handling – Eliminates the need for separate reversal data struc
 Deque
 
 
+**UC8: Linked List Based Palindrome Checker**
+-
+**Goal:** 
+
+Check palindrome using singly linked list.
+
+**Flow:**
+
+1.Convert string to linked list
+
+2.Reverse second half
+
+3.Compare halves
+
+**Key Concepts used in UC8:**
+
+Singly Linked List – A dynamic data structure where elements are connected using node references.
+
+Node Traversal – Sequential access to elements using next references.
+
+Fast and Slow Pointer Technique – Used to find the middle of the linked list efficiently.
+
+In-Place Reversal – Reverses the second half of the list without extra memory.
+
+**Data Structure:** 
+
+Singly Linked List
+
 
