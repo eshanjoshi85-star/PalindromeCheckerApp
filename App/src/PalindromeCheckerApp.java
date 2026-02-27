@@ -1,4 +1,4 @@
-//Version 6.0
+//Version 7.0
 //Eshan Pankaj Joshi
 //Use Case 1: Welcome Message
 //Use Case 2: Hardcoded Palindrome (Optimized Check)
@@ -6,13 +6,15 @@
 //Use Case 4: Character Array Based Palindrome Check
 //Use Case 5: Stack-Based Palindrome Checker
 //Use Case 6: Queue + Stack Based Palindrome Check
+//Use Case 7: Deque-Based Optimized Palindrome Checker
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Deque;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         // UC1: Welcome Message
-        System.out.println("=== Welcome to Palindrome Checker Management System ===");
+        System.out.println("UC1: Welcome to Palindrome Checker Management System");
         System.out.println();
         // UC2: Hardcoded Palindrome (Using Index Comparison)
         String originalUC2 = "madam";
@@ -46,7 +48,7 @@ public class PalindromeCheckerApp {
             right--;
         }
         System.out.println("UC4 (Char Array): Is '" + inputUC4 + "' a palindrome? " + isPalUC4);
-        //  UC5: Stack-Based Palindrome Checker
+        // UC5: Stack-Based Palindrome Checker
         String inputUC5 = "noon";
         Stack<Character> stackUC5 = new Stack<>();
         for (int i = 0; i < inputUC5.length(); i++) {
@@ -57,7 +59,7 @@ public class PalindromeCheckerApp {
             reversedUC5 += stackUC5.pop();
         }
         System.out.println("UC5 (Stack Only): Is '" + inputUC5 + "' a palindrome? " + inputUC5.equals(reversedUC5));
-        //  UC6: Queue + Stack Based Palindrome Check
+        // UC6: Queue + Stack Based Palindrome Check
         String inputUC6 = "racecar";
         Stack<Character> stackUC6 = new Stack<>();
         Queue<Character> queueUC6 = new LinkedList<>();
@@ -73,6 +75,22 @@ public class PalindromeCheckerApp {
                 break;
             }
         }
-        System.out.println("UC6 (Stack & Queue): Is '" + inputUC6 + "' a palindrome? " + isPalUC6);;
+        System.out.println("UC6 (Stack & Queue): Is '" + inputUC6 + "' a palindrome? " + isPalUC6);
+        // UC7: Deque-Based Optimized Palindrome Checker
+        String inputUC7 = "level";
+        Deque<Character> dequeUC7 = new LinkedList<>();
+        for (int i = 0; i < inputUC7.length(); i++) {
+            dequeUC7.addLast(inputUC7.charAt(i));
+        }
+        boolean isPalUC7 = true;
+        while (dequeUC7.size() > 1) {
+            char frontChar = dequeUC7.removeFirst();
+            char rearChar = dequeUC7.removeLast();
+            if (frontChar != rearChar) {
+                isPalUC7 = false;
+                break;
+            }
+        }
+        System.out.println("UC7 (Deque Optimized): Is '" + inputUC7 + "' a palindrome? " + isPalUC7);
     }
 }
