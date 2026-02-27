@@ -188,7 +188,7 @@ Logical Comparison – Matching dequeue (queue) output with pop (stack) output t
 Queue, Stack
 
 **UC7: Deque-Based Optimized Palindrome Checker**
-
+-
 **Goal:** 
 
 Use Deque to compare front and rear elements.
